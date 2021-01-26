@@ -1,0 +1,24 @@
+{
+  "name": "quick-s",
+  "version": "1.0.0",
+  "description": "Create Survey form for users and launch a campaign to send the survey emails to appropriate target recipients.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/areebadroit/quick-S.git"
+  },
+  "author": "MD AREEB ANSAR",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/areebadroit/quick-S/issues"
+  },
+  "homepage": "https://github.com/areebadroit/quick-S#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "passport": "^0.4.1",
+    "passport-google-oauth20": "^2.0.0"
+  }
+}
