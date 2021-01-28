@@ -8,7 +8,14 @@ app.get(
     })
 );
 
-app.get('/home', passport.authenticate('google'),(req,res)=>{
-    res.send({hi:'welcome'})
+app.get('/home', passport.authenticate('google'));
+
+app.get('/api/logout',(req, res)=>{
+    req.logout();
+    res.send("You are logged out");
 });
-}
+
+app.get('/api/current_user',(req, res)=>{
+    res.send(req.user);
+});
+};
