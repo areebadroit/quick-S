@@ -20,7 +20,8 @@ passport.deserializeUser((id,done)=>{
 passport.use(new googleStrategy({
     clientID:keys.googleClientID,
     clientSecret:keys.googleClientSecret,
-    callbackURL: '/home'
+    callbackURL: '/home',
+    proxy:true
     },
     (accessToken, refreshToken, profile, done)=>{
         User.findOne({googleID:profile.id}).then((existingUser)=>{
@@ -30,7 +31,7 @@ passport.use(new googleStrategy({
                 new User({googleID:profile.id,name:profile._json.name,
                     emails:profile.emails,photos:profile.photos,
                     gender:profile.gender,provider:profile.provider})
-                    .save().then(newUser=> done(null,user));
+                    .save().then(user=> done(null,user));
             }
         });
     }
